@@ -1,14 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Movement : MonoBehaviour
 {
     public GameObject Player_past;
+    public Vector2 moveInput;
+    public Vector2 LastMove;
+    public Text step1;
+    public Text step2;
+    public Text step3;
 
     private Rigidbody2D rb;
-    private Vector2 moveInput;
     private Queue<Vector2> record = new Queue<Vector2>();
+    private string temp_step;
 
     
     // Start is called before the first frame update
@@ -28,6 +34,7 @@ public class Movement : MonoBehaviour
             horizontal = -1;
             moveInput = new Vector2(horizontal, vertical);
             record.Enqueue(moveInput);
+            UpdateSteps("↓");
             Move();
         }
         if (Input.GetKeyDown(KeyCode.D))
@@ -35,6 +42,7 @@ public class Movement : MonoBehaviour
             horizontal = 1;
             moveInput = new Vector2(horizontal, vertical);
             record.Enqueue(moveInput);
+            UpdateSteps("↑");
             Move();
         }
         if (Input.GetKeyDown(KeyCode.W))
@@ -42,6 +50,7 @@ public class Movement : MonoBehaviour
             vertical = 1;
             moveInput = new Vector2(horizontal, vertical);
             record.Enqueue(moveInput);
+            UpdateSteps("→");
             Move();
         }
         if (Input.GetKeyDown(KeyCode.S))
@@ -49,6 +58,7 @@ public class Movement : MonoBehaviour
             vertical = -1;
             moveInput = new Vector2(horizontal, vertical);
             record.Enqueue(moveInput);
+            UpdateSteps("←");
             Move();
         }
         //start player_past movement
@@ -67,7 +77,25 @@ public class Movement : MonoBehaviour
         }
         else
         {
-            Player_past.GetComponent<Rigidbody2D>().MovePosition(Player_past.GetComponent<Rigidbody2D>().position + record.Dequeue());
+            LastMove = record.Dequeue();
+            Player_past.GetComponent<Rigidbody2D>().MovePosition(Player_past.GetComponent<Rigidbody2D>().position + LastMove);
         }
+    }
+    private void UpdateSteps(string move)
+    {
+        if (step1.text == "None")
+        {
+            step1.text = move;
+            return;
+        }else if(step2.text == "None")
+        {
+            step2.text = move;
+            return;
+        }else if (step3.text == "None")
+        {
+            step3.text = move;
+            return;
+        }
+        temp_step = move;
     }
 }
