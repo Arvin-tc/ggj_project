@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
     public Transform FinishPoint;
     public GameObject Teleport_Entry;
     public GameObject Teleport_Exit;
+    
+
 
     // Start is called before the first frame update
     void Start()

@@ -11,12 +11,14 @@ public class Movement : MonoBehaviour
     public Text step1;
     public Text step2;
     public Text step3;
+    public GameObject Walls;
+    public GameObject Boxes;
 
     private Rigidbody2D rb;
     private Queue<Vector2> record = new Queue<Vector2>();
     private string temp_step;
-
     
+
     // Start is called before the first frame update
     void Start()
     {
@@ -66,7 +68,17 @@ public class Movement : MonoBehaviour
     }
     private void Move()
     {
+        if (!CheckIfMove(rb.position + moveInput, rb.position, moveInput)) { return; }
+        
+        for (int i = 0; i < Boxes.transform.childCount; i++)
+        {
+            if (new Vector2(Boxes.transform.GetChild(i).position.x, Boxes.transform.GetChild(i).position.y) == rb.position + moveInput)
+            {
+                Boxes.transform.GetChild(i).GetComponent<Box>().MoveBoxesCheck(rb.position + moveInput, moveInput);
+            }
+        }
         rb.MovePosition(rb.position + moveInput);
+
     }
     //player_past movement
     private void past_move()
@@ -78,7 +90,19 @@ public class Movement : MonoBehaviour
         else
         {
             LastMove = record.Dequeue();
-            Player_past.GetComponent<Rigidbody2D>().MovePosition(Player_past.GetComponent<Rigidbody2D>().position + LastMove);
+            if (CheckIfMove(Player_past.GetComponent<Rigidbody2D>().position + LastMove, Player_past.GetComponent<Rigidbody2D>().position, LastMove))
+            {
+                Player_past.GetComponent<Rigidbody2D>().MovePosition(Player_past.GetComponent<Rigidbody2D>().position + LastMove);
+                for(int i = 0; i < Boxes.transform.childCount; i++)
+                {
+                    if (new Vector2(Boxes.transform.GetChild(i).position.x, Boxes.transform.GetChild(i).position.y) == Player_past.GetComponent<Rigidbody2D>().position + LastMove)
+                    {
+                        Boxes.transform.GetChild(i).GetComponent<Box>().MoveBoxesCheck(Player_past.GetComponent<Rigidbody2D>().position + LastMove, LastMove);
+                    }
+                }
+
+            }
+            
             step1.text = step2.text;
             step2.text = step3.text;
             step3.text = temp_step;
@@ -100,5 +124,29 @@ public class Movement : MonoBehaviour
             return;
         }
         temp_step = move;
+    }
+    private bool CheckIfMove(Vector2 newPos, Vector2 curPos, Vector2 moveInput)
+    {
+        bool allow = true;
+        for (int i = 0; i < Walls.transform.childCount; i++)
+        {
+            if (new Vector2 (Walls.transform.GetChild(i).position.x, Walls.transform.GetChild(i).position.y) == newPos)
+            {
+                allow = false;
+                break;
+            }
+            for (int j = 0; j < Boxes.transform.childCount; j++)
+            {
+                if (new Vector2(Boxes.transform.GetChild(j).position.x, Boxes.transform.GetChild(j).position.y) + moveInput == new Vector2(Walls.transform.GetChild(i).position.x, Walls.transform.GetChild(i).position.y) 
+                    && 
+                    new Vector2(Boxes.transform.GetChild(j).position.x, Boxes.transform.GetChild(j).position.y) == newPos)
+                {
+                    allow = false;
+                    break;
+                }
+            }
+        }
+        
+        return allow;
     }
 }
