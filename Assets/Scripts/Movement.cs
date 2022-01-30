@@ -68,6 +68,10 @@ public class Movement : MonoBehaviour
     }
     private void Move()
     {
+        if (moveInput != Vector2.zero)
+        {
+            transform.rotation = Quaternion.LookRotation(Vector3.forward, moveInput);
+        }
         if (!CheckIfMove(rb.position + moveInput, rb.position, moveInput)) { return; }
         
         for (int i = 0; i < Boxes.transform.childCount; i++)
@@ -78,10 +82,7 @@ public class Movement : MonoBehaviour
             }
         }
         rb.MovePosition(rb.position + moveInput);
-        if (moveInput != Vector2.zero)
-        {
-            transform.rotation = Quaternion.LookRotation(Vector3.forward, moveInput);
-        }
+        
 
     }
     //player_past movement
@@ -114,16 +115,19 @@ public class Movement : MonoBehaviour
     }
     private void UpdateSteps(string move)
     {
-        if (step1.text == "None")
+        if (step3.text == "None")
         {
-            step1.text = move;
+            step3.text = move;
             return;
         }else if(step2.text == "None")
         {
-            step2.text = move;
+            step2.text = step3.text;
+            step3.text = move;
             return;
-        }else if (step3.text == "None")
+        }else if (step1.text == "None")
         {
+            step1.text = step2.text;
+            step2.text = step3.text;
             step3.text = move;
             return;
         }
