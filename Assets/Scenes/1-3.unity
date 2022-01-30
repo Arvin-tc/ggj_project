@@ -5770,12 +5770,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1032539755 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6166275495559653813, guid: cf81caa53f8176c44b6b5faf45e01a11,
-    type: 3}
-  m_PrefabInstance: {fileID: 1032539751}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1033110621
 GameObject:
   m_ObjectHideFlags: 0
@@ -9577,9 +9571,7 @@ MonoBehaviour:
   FinishPoint_past: {fileID: 2097663444}
   Teleport_Entry: {fileID: 0}
   Teleport_Exit: {fileID: 0}
-  NextLevelPanel: {fileID: 1032539755}
-  player: {fileID: 5896758941011709640}
-  player_past: {fileID: 1137708694}
+  NextLevelPanel: {fileID: 0}
 --- !u!1 &1982084013
 GameObject:
   m_ObjectHideFlags: 0
@@ -10676,12 +10668,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66a6b36bd134af5478da57729b3fc3f3, type: 3}
---- !u!1 &5896758941011709640 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5896758941543765230, guid: 66a6b36bd134af5478da57729b3fc3f3,
-    type: 3}
-  m_PrefabInstance: {fileID: 5896758941011709639}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6594453170975400653
 PrefabInstance:
   m_ObjectHideFlags: 0
