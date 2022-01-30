@@ -144,6 +144,37 @@ public class Movement : MonoBehaviour
                     allow = false;
                     break;
                 }
+                if (new Vector2(Boxes.transform.GetChild(j).position.x, Boxes.transform.GetChild(j).position.y) == newPos)
+                {
+                    if (j == 0)
+                    {
+                        if (new Vector2(Boxes.transform.GetChild(1).position.x, Boxes.transform.GetChild(1).position.y) == newPos+moveInput 
+                            ||
+                            new Vector2(Boxes.transform.GetChild(2).position.x, Boxes.transform.GetChild(2).position.y) == newPos + moveInput)
+                        {
+                            allow = false;
+                            break;
+                        }
+                    }else if (j == 1)
+                    {
+                        if (new Vector2(Boxes.transform.GetChild(0).position.x, Boxes.transform.GetChild(0).position.y) == newPos + moveInput
+                            ||
+                            new Vector2(Boxes.transform.GetChild(2).position.x, Boxes.transform.GetChild(2).position.y) == newPos + moveInput)
+                        {
+                            allow = false;
+                            break;
+                        }
+                    }else if (j == 2)
+                    {
+                        if (new Vector2(Boxes.transform.GetChild(0).position.x, Boxes.transform.GetChild(0).position.y) == newPos + moveInput
+                            ||
+                            new Vector2(Boxes.transform.GetChild(1).position.x, Boxes.transform.GetChild(1).position.y) == newPos + moveInput)
+                        {
+                            allow = false;
+                            break;
+                        }
+                    }
+                }
             }
         }
         
