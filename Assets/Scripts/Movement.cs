@@ -94,11 +94,19 @@ public class Movement : MonoBehaviour
         }
         else
         {
+            
             LastMove = record.Dequeue();
+            if (LastMove != Vector2.zero)
+            {
+                Player_past.transform.rotation = Quaternion.LookRotation(Vector3.forward, LastMove);
+            }
             if (CheckIfMove(Player_past.GetComponent<Rigidbody2D>().position + LastMove, Player_past.GetComponent<Rigidbody2D>().position, LastMove))
             {
+                
                 Player_past.GetComponent<Rigidbody2D>().MovePosition(Player_past.GetComponent<Rigidbody2D>().position + LastMove);
-                for(int i = 0; i < Boxes.transform.childCount; i++)
+                Player_past.GetComponent<SpriteRenderer>().enabled = true;
+
+                for (int i = 0; i < Boxes.transform.childCount; i++)
                 {
                     if (new Vector2(Boxes.transform.GetChild(i).position.x, Boxes.transform.GetChild(i).position.y) == Player_past.GetComponent<Rigidbody2D>().position + LastMove)
                     {
@@ -107,6 +115,7 @@ public class Movement : MonoBehaviour
                 }
 
             }
+            else { Player_past.GetComponent<SpriteRenderer>().enabled = true; }
             
             step1.text = step2.text;
             step2.text = step3.text;
