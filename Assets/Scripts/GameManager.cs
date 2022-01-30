@@ -16,14 +16,13 @@ public class GameManager : MonoBehaviour
     public GameObject NextLevelPanel;
 
 
-    private GameObject player;
-    private GameObject player_past;
+    public GameObject player;
+    public GameObject player_past;
 
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-        player_past = GameObject.FindGameObjectWithTag("Player_Past");
+        
     }
 
     // Update is called once per frame

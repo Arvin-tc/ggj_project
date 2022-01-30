@@ -21,6 +21,7 @@ public class UI : MonoBehaviour
     // turn to next level
     public void nextLevel() 
     {
+        Debug.Log("this is next level");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
