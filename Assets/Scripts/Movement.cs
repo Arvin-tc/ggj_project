@@ -96,6 +96,10 @@ public class Movement : MonoBehaviour
         {
             
             LastMove = record.Dequeue();
+            if (LastMove != Vector2.zero)
+            {
+                Player_past.transform.rotation = Quaternion.LookRotation(Vector3.forward, LastMove);
+            }
             if (CheckIfMove(Player_past.GetComponent<Rigidbody2D>().position + LastMove, Player_past.GetComponent<Rigidbody2D>().position, LastMove))
             {
                 
