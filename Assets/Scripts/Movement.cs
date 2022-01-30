@@ -104,7 +104,7 @@ public class Movement : MonoBehaviour
             {
                 
                 Player_past.GetComponent<Rigidbody2D>().MovePosition(Player_past.GetComponent<Rigidbody2D>().position + LastMove);
-                Player_past.GetComponent<SpriteRenderer>().enabled = true;
+                Player_past.GetComponent<SpriteRenderer>().color = Color.white;
 
                 for (int i = 0; i < Boxes.transform.childCount; i++)
                 {
@@ -115,7 +115,7 @@ public class Movement : MonoBehaviour
                 }
 
             }
-            else { Player_past.GetComponent<SpriteRenderer>().enabled = true; }
+            else { Player_past.GetComponent<SpriteRenderer>().color = Color.white; }
             
             step1.text = step2.text;
             step2.text = step3.text;
