@@ -9013,17 +9013,17 @@ PrefabInstance:
     - target: {fileID: 7049570002909312775, guid: f7fdc5cc4a375f14ea324db282e766ea,
         type: 3}
       propertyPath: m_Color.b
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7049570002909312775, guid: f7fdc5cc4a375f14ea324db282e766ea,
         type: 3}
       propertyPath: m_Color.g
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7049570002909312775, guid: f7fdc5cc4a375f14ea324db282e766ea,
         type: 3}
       propertyPath: m_Color.r
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7049570002909312778, guid: f7fdc5cc4a375f14ea324db282e766ea,
         type: 3}
