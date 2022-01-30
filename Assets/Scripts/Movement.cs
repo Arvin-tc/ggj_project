@@ -78,6 +78,10 @@ public class Movement : MonoBehaviour
             }
         }
         rb.MovePosition(rb.position + moveInput);
+        if (moveInput != Vector2.zero)
+        {
+            transform.rotation = Quaternion.LookRotation(Vector3.forward, moveInput);
+        }
 
     }
     //player_past movement
