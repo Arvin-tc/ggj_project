@@ -300,7 +300,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -508,7 +508,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.990566, g: 0.051397298, b: 0.051397298, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1202,7 +1202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1614,9 +1614,9 @@ MonoBehaviour:
   Player_past: {fileID: 1137708694}
   moveInput: {x: 0, y: 0}
   LastMove: {x: 0, y: 0}
-  step1: {fileID: 809044245}
+  step1: {fileID: 242603692}
   step2: {fileID: 153351489}
-  step3: {fileID: 242603692}
+  step3: {fileID: 809044245}
   Walls: {fileID: 1279184825}
   Boxes: {fileID: 2021852379}
 --- !u!212 &1640995372
@@ -2015,8 +2015,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpawnPoint: {fileID: 0}
   FinishPoint: {fileID: 0}
+  SpawnPoint_past: {fileID: 0}
+  FinishPoint_past: {fileID: 0}
   Teleport_Entry: {fileID: 0}
   Teleport_Exit: {fileID: 0}
+  NextLevelPanel: {fileID: 0}
 --- !u!1 &2000497696
 GameObject:
   m_ObjectHideFlags: 0
