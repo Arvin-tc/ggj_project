@@ -163,29 +163,9 @@ public class Movement : MonoBehaviour
                 }
                 if (new Vector2(Boxes.transform.GetChild(j).position.x, Boxes.transform.GetChild(j).position.y) == newPos)
                 {
-                    if (j == 0)
+                    for (int e = 0; e < Boxes.transform.childCount; e++)
                     {
-                        if (new Vector2(Boxes.transform.GetChild(1).position.x, Boxes.transform.GetChild(1).position.y) == newPos+moveInput 
-                            ||
-                            new Vector2(Boxes.transform.GetChild(2).position.x, Boxes.transform.GetChild(2).position.y) == newPos + moveInput)
-                        {
-                            allow = false;
-                            break;
-                        }
-                    }else if (j == 1)
-                    {
-                        if (new Vector2(Boxes.transform.GetChild(0).position.x, Boxes.transform.GetChild(0).position.y) == newPos + moveInput
-                            ||
-                            new Vector2(Boxes.transform.GetChild(2).position.x, Boxes.transform.GetChild(2).position.y) == newPos + moveInput)
-                        {
-                            allow = false;
-                            break;
-                        }
-                    }else if (j == 2)
-                    {
-                        if (new Vector2(Boxes.transform.GetChild(0).position.x, Boxes.transform.GetChild(0).position.y) == newPos + moveInput
-                            ||
-                            new Vector2(Boxes.transform.GetChild(1).position.x, Boxes.transform.GetChild(1).position.y) == newPos + moveInput)
+                        if (new Vector2(Boxes.transform.GetChild(e).position.x, Boxes.transform.GetChild(e).position.y) == newPos + moveInput)
                         {
                             allow = false;
                             break;
