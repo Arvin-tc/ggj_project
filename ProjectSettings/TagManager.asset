@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Box
   - Wall
+  - Player_Past
   layers:
   - Default
   - TransparentFX
