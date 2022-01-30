@@ -34,7 +34,7 @@ public class Movement : MonoBehaviour
             horizontal = -1;
             moveInput = new Vector2(horizontal, vertical);
             record.Enqueue(moveInput);
-            UpdateSteps("↓");
+            UpdateSteps("←");
             Move();
         }
         if (Input.GetKeyDown(KeyCode.D))
@@ -42,7 +42,7 @@ public class Movement : MonoBehaviour
             horizontal = 1;
             moveInput = new Vector2(horizontal, vertical);
             record.Enqueue(moveInput);
-            UpdateSteps("↑");
+            UpdateSteps("→");
             Move();
         }
         if (Input.GetKeyDown(KeyCode.W))
@@ -50,7 +50,7 @@ public class Movement : MonoBehaviour
             vertical = 1;
             moveInput = new Vector2(horizontal, vertical);
             record.Enqueue(moveInput);
-            UpdateSteps("→");
+            UpdateSteps("↑");
             Move();
         }
         if (Input.GetKeyDown(KeyCode.S))
@@ -58,7 +58,7 @@ public class Movement : MonoBehaviour
             vertical = -1;
             moveInput = new Vector2(horizontal, vertical);
             record.Enqueue(moveInput);
-            UpdateSteps("←");
+            UpdateSteps("↓");
             Move();
         }
         //start player_past movement
@@ -79,6 +79,9 @@ public class Movement : MonoBehaviour
         {
             LastMove = record.Dequeue();
             Player_past.GetComponent<Rigidbody2D>().MovePosition(Player_past.GetComponent<Rigidbody2D>().position + LastMove);
+            step1.text = step2.text;
+            step2.text = step3.text;
+            step3.text = temp_step;
         }
     }
     private void UpdateSteps(string move)
