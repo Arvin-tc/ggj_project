@@ -3822,7 +3822,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.042586338, g: 0.06638138, b: 0.103773594, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -10766,6 +10766,8 @@ MonoBehaviour:
   Teleport_Entry: {fileID: 0}
   Teleport_Exit: {fileID: 0}
   NextLevelPanel: {fileID: 0}
+  player: {fileID: 0}
+  player_past: {fileID: 0}
 --- !u!1 &1982084013
 GameObject:
   m_ObjectHideFlags: 0
