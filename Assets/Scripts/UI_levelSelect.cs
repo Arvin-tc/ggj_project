@@ -54,5 +54,16 @@ public class UI_levelSelect : MonoBehaviour
     {
         SceneManager.LoadScene(10);
     }
-
+    public void level11()
+    {
+        SceneManager.LoadScene(11);
+    }
+    public void level12()
+    {
+        SceneManager.LoadScene(12);
+    }
+    public void level13()
+    {
+        SceneManager.LoadScene(13);
+    }
 }
