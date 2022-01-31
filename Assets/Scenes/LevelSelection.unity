@@ -722,7 +722,9 @@ PrefabInstance:
     - target: {fileID: 1036843357829667009, guid: 2edaf9acfebafcf42b284222b625cba2,
         type: 3}
       propertyPath: m_Text
-      value: 2-7
+      value: '2-X
+
+'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2edaf9acfebafcf42b284222b625cba2, type: 3}
