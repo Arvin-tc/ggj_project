@@ -1550,8 +1550,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 5b0eab16f9070b2448a56ed28e48ea59, type: 3}
 --- !u!4 &713816726 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 676375218173078783, guid: 5b0eab16f9070b2448a56ed28e48ea59,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 713816725}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &782408108
@@ -2000,8 +1999,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 5b0eab16f9070b2448a56ed28e48ea59, type: 3}
 --- !u!4 &974140148 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 676375218173078783, guid: 5b0eab16f9070b2448a56ed28e48ea59,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 974140147}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &999478303
@@ -2309,6 +2307,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1032539755 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8455986715472425941, guid: cf81caa53f8176c44b6b5faf45e01a11,
+    type: 3}
+  m_PrefabInstance: {fileID: 1032539751}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1070588521
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2380,8 +2384,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 5b0eab16f9070b2448a56ed28e48ea59, type: 3}
 --- !u!4 &1070588522 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 676375218173078783, guid: 5b0eab16f9070b2448a56ed28e48ea59,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 1070588521}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1102147811
@@ -2536,8 +2539,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 5b0eab16f9070b2448a56ed28e48ea59, type: 3}
 --- !u!4 &1171010864 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 676375218173078783, guid: 5b0eab16f9070b2448a56ed28e48ea59,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 1171010863}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1227171550
@@ -2904,12 +2906,12 @@ Transform:
   - {fileID: 672100453}
   - {fileID: 2094574765}
   - {fileID: 999478304}
-  - {fileID: 1171010864}
+  - {fileID: 1070588522}
   - {fileID: 465544169}
   - {fileID: 952094502}
   - {fileID: 1227171551}
   - {fileID: 1270613797}
-  - {fileID: 1070588522}
+  - {fileID: 1171010864}
   - {fileID: 1557598782}
   m_Father: {fileID: 0}
   m_RootOrder: 6
@@ -3563,7 +3565,7 @@ MonoBehaviour:
   FinishPoint_past: {fileID: 64765851}
   Teleport_Entry: {fileID: 0}
   Teleport_Exit: {fileID: 0}
-  NextLevelPanel: {fileID: 0}
+  NextLevelPanel: {fileID: 1032539755}
   player: {fileID: 5896758941011709640}
   player_past: {fileID: 1137708694}
 --- !u!1001 &1981290921

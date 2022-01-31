@@ -501,6 +501,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &109352668 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8455986715472425941, guid: cf81caa53f8176c44b6b5faf45e01a11,
+    type: 3}
+  m_PrefabInstance: {fileID: 109352664}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &149754605
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4566,7 +4572,7 @@ MonoBehaviour:
   FinishPoint_past: {fileID: 2096087998}
   Teleport_Entry: {fileID: 0}
   Teleport_Exit: {fileID: 0}
-  NextLevelPanel: {fileID: 0}
+  NextLevelPanel: {fileID: 109352668}
   player: {fileID: 1919026936}
   player_past: {fileID: 1137708694}
 --- !u!1001 &2001578616
