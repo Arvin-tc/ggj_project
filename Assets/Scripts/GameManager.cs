@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
     public GameObject player;
     public GameObject player_past;
 
+    private float Timer2 = 5;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,16 +30,29 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        checkLevelFinish();
+        if (checkLevelFinish())
+        {
+            if (Timer2 <= 0)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
+            Timer2 -= Time.deltaTime;
+            if (Input.anyKeyDown)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
+        }
     }
 
 
     // check if this level finished
-    void checkLevelFinish() 
+    bool checkLevelFinish() 
     {
         if (player.transform.position == FinishPoint.position && player_past.transform.position == FinishPoint_past.position) 
         {
             NextLevelPanel.SetActive(true);
+            return true;
         }
+        return false;
     }
 }
